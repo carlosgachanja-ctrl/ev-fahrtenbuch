@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import { Fahrt, Fahrzeug } from "@/lib/types";
 
 interface Props {
@@ -7,9 +8,30 @@ interface Props {
 }
 
 export default function StatsDashboard({ fahrten, fahrzeug }: Props) {
+  // Stichtag: Standard = erster Tag des aktuellen Monats
+  const heute = new Date();
+  const defaultStichtag = `${heute.getFullYear()}-${String(heute.getMonth() + 1).padStart(2, "0")}-01`;
+  const [stichtag, setStichtag] = useState(defaultStichtag);
+
   if (fahrten.length === 0) {
     return <div className="text-center py-20 text-slate-400">Keine Daten vorhanden</div>;
   }
+
+  // --- Verbrauch seit letztem Laden ---
+  const sortierteFahrten = [...fahrten].sort((a, b) => b.datum.localeCompare(a.datum));
+  const letzterLadeIndex = sortierteFahrten.findIndex(f => f.ladevorgaenge.length > 0);
+  const seitLetztemLaden = letzterLadeIndex > 0 ? sortierteFahrten.slice(0, letzterLadeIndex) : [];
+  const kmSeitLaden = seitLetztemLaden.reduce((s, f) => s + f.km_gesamt, 0);
+  const kwhSeitLaden = seitLetztemLaden.reduce((s, f) => s + f.verbrauch_kwh, 0);
+  const verbrauchSeitLaden = kmSeitLaden > 0 ? (kwhSeitLaden / kmSeitLaden) * 100 : null;
+
+  // --- Verbrauch seit Stichtag ---
+  const fahrtenSeitStichtag = fahrten.filter(f => f.datum >= stichtag);
+  const kmStichtag = fahrtenSeitStichtag.reduce((s, f) => s + f.km_gesamt, 0);
+  const kwhStichtag = fahrtenSeitStichtag.reduce((s, f) => s + f.verbrauch_kwh, 0);
+  const verbrauchStichtag = kmStichtag > 0 ? (kwhStichtag / kmStichtag) * 100 : null;
+  const ladekostenStichtag = fahrtenSeitStichtag.flatMap(f => f.ladevorgaenge).reduce((s, l) => s + l.kosten_eur, 0);
+  const geladenkwhStichtag = fahrtenSeitStichtag.flatMap(f => f.ladevorgaenge).reduce((s, l) => s + l.geladene_kwh, 0);
 
   const totalKm = fahrten.reduce((s, f) => s + f.km_gesamt, 0);
   const totalKwh = fahrten.reduce((s, f) => s + f.verbrauch_kwh, 0);
@@ -55,6 +77,43 @@ export default function StatsDashboard({ fahrten, fahrzeug }: Props) {
   return (
     <div className="space-y-6">
       <h2 className="text-white font-semibold text-lg">📊 Auswertung</h2>
+
+      {/* Verbrauch seit letztem Laden */}
+      <div className="bg-slate-800 rounded-xl border border-green-800/40 p-4">
+        <h3 className="text-green-400 font-semibold mb-3 text-sm">⚡ Seit letztem Laden</h3>
+        {seitLetztemLaden.length === 0 ? (
+          <p className="text-slate-500 text-sm">Keine Fahrten nach dem letzten Ladevorgang.</p>
+        ) : (
+          <div className="grid grid-cols-3 gap-3 text-sm">
+            <div><div className="text-slate-400 text-xs mb-0.5">Gefahren</div><div className="text-white font-mono font-bold">{kmSeitLaden.toFixed(0)} km</div></div>
+            <div><div className="text-slate-400 text-xs mb-0.5">Verbraucht</div><div className="text-white font-mono font-bold">{kwhSeitLaden.toFixed(1)} kWh</div></div>
+            <div><div className="text-slate-400 text-xs mb-0.5">⌀ Verbrauch</div><div className="text-green-300 font-mono font-bold">{verbrauchSeitLaden ? `${verbrauchSeitLaden.toFixed(1)} kWh/100km` : "—"}</div></div>
+          </div>
+        )}
+      </div>
+
+      {/* Verbrauch seit Stichtag */}
+      <div className="bg-slate-800 rounded-xl border border-blue-800/40 p-4">
+        <div className="flex items-center justify-between mb-3">
+          <h3 className="text-blue-400 font-semibold text-sm">📅 Auswertung ab Stichtag</h3>
+          <input
+            type="date"
+            value={stichtag}
+            onChange={e => setStichtag(e.target.value)}
+            className="bg-slate-700 border border-slate-600 rounded-lg px-2 py-1 text-white text-xs focus:outline-none focus:border-blue-500"
+          />
+        </div>
+        {fahrtenSeitStichtag.length === 0 ? (
+          <p className="text-slate-500 text-sm">Keine Fahrten ab diesem Datum.</p>
+        ) : (
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+            <div><div className="text-slate-400 text-xs mb-0.5">Fahrten</div><div className="text-white font-mono font-bold">{fahrtenSeitStichtag.length}</div></div>
+            <div><div className="text-slate-400 text-xs mb-0.5">Kilometer</div><div className="text-white font-mono font-bold">{kmStichtag.toFixed(0)} km</div></div>
+            <div><div className="text-slate-400 text-xs mb-0.5">⌀ Verbrauch</div><div className="text-blue-300 font-mono font-bold">{verbrauchStichtag ? `${verbrauchStichtag.toFixed(1)} kWh/100km` : "—"}</div></div>
+            <div><div className="text-slate-400 text-xs mb-0.5">Ladekosten</div><div className="text-white font-mono font-bold">{ladekostenStichtag.toFixed(2)} €{geladenkwhStichtag > 0 ? ` · ${(ladekostenStichtag / geladenkwhStichtag).toFixed(3)} €/kWh` : ""}</div></div>
+          </div>
+        )}
+      </div>
 
       {/* KPIs */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
