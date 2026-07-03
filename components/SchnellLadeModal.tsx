@@ -13,7 +13,7 @@ function nowISO() {
   return d.toISOString().slice(0, 16);
 }
 
-const LADETYPEN: LadeTyp[] = ["AC", "DC", "CCS", "CHAdeMO", "Type2", "Wallbox", "Haushaltssteckdose"];
+const LADETYPEN: LadeTyp[] = ["AC", "DC", "CCS", "Type2", "Wallbox", "Haushaltssteckdose"];
 
 export default function SchnellLadeModal({ onSave, onCancel }: Props) {
   const [startzeit, setStartzeit] = useState(nowISO());

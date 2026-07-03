@@ -1,5 +1,5 @@
 export type Zweck = "dienstlich" | "privat" | "gemischt";
-export type LadeTyp = "AC" | "DC" | "CCS" | "CHAdeMO" | "Type2" | "Wallbox" | "Haushaltssteckdose";
+export type LadeTyp = "AC" | "DC" | "CCS" | "Type2" | "Wallbox" | "Haushaltssteckdose";
 export type Ladestatus = "vollständig" | "unterbrochen" | "fehler";
 
 export interface Ladevorgang {
