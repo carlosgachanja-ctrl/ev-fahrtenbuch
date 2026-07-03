@@ -35,6 +35,30 @@ export default function SchnellLadeModal({ onSave, onCancel }: Props) {
   const [status, setStatus] = useState<Ladestatus>("vollständig");
   const [notiz, setNotiz] = useState("");
 
+  // €/kWh aus Tarif-Feld extrahieren und Kosten automatisch berechnen
+  function parsePreisProKwh(t: string): number | null {
+    const match = t.replace(",", ".").match(/(\d+\.?\d*)/);
+    return match ? parseFloat(match[1]) : null;
+  }
+
+  function handleKwhChange(val: string) {
+    setGeladenKwh(val);
+    const kwh = parseFloat(val);
+    const preis = parsePreisProKwh(tarif);
+    if (kwh > 0 && preis && preis > 0) {
+      setKosten((kwh * preis).toFixed(2));
+    }
+  }
+
+  function handleTarifChange(val: string) {
+    setTarif(val);
+    const kwh = parseFloat(geladenKwh);
+    const preis = parsePreisProKwh(val);
+    if (kwh > 0 && preis && preis > 0) {
+      setKosten((kwh * preis).toFixed(2));
+    }
+  }
+
   const ladedauer = (() => {
     if (!startzeit || !endzeit) return null;
     const diff = (new Date(endzeit).getTime() - new Date(startzeit).getTime()) / 60000;
@@ -183,7 +207,7 @@ export default function SchnellLadeModal({ onSave, onCancel }: Props) {
                 <label className="text-slate-400 text-xs block mb-1">Geladen (kWh)</label>
                 <input type="number" step="0.1"
                   className="w-full bg-slate-700 border border-slate-600 rounded-xl px-3 py-3 text-white text-lg font-bold text-center focus:outline-none focus:border-green-500"
-                  placeholder="0.0" value={geladenKwh} onChange={e => setGeladenKwh(e.target.value)} required />
+                  placeholder="0.0" value={geladenKwh} onChange={e => handleKwhChange(e.target.value)} required />
               </div>
               <div>
                 <label className="text-slate-400 text-xs block mb-1">Leistung (kW)</label>
@@ -269,7 +293,7 @@ export default function SchnellLadeModal({ onSave, onCancel }: Props) {
                 <label className="text-slate-400 text-xs block mb-1">Tarif / €/kWh</label>
                 <input type="text"
                   className="w-full bg-slate-700 border border-slate-600 rounded-xl px-3 py-2.5 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-green-500"
-                  placeholder="z.B. 0.59 €/kWh" value={tarif} onChange={e => setTarif(e.target.value)} />
+                  placeholder="z.B. 0.59 €/kWh" value={tarif} onChange={e => handleTarifChange(e.target.value)} />
               </div>
             </div>
             {geladenKwh && kosten && (
