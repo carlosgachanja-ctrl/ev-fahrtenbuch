@@ -11,6 +11,8 @@ export interface Ladevorgang {
   geladene_kwh: number;
   akkustand_start: number; // %
   akkustand_ende: number;  // %
+  reichweite_start_km?: number;
+  reichweite_ende_km?: number;
   anbieter: string;
   stationsname: string;
   stationsid?: string;

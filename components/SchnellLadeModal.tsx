@@ -23,6 +23,8 @@ export default function SchnellLadeModal({ onSave, onCancel }: Props) {
   const [geladenKwh, setGeladenKwh] = useState("");
   const [akkuStart, setAkkuStart] = useState("");
   const [akkuEnde, setAkkuEnde] = useState("");
+  const [reichweiteStart, setReichweiteStart] = useState("");
+  const [reichweiteEnde, setReichweiteEnde] = useState("");
   const [anbieter, setAnbieter] = useState("");
   const [stationsname, setStationsname] = useState("");
   const [stationsid, setStationsid] = useState("");
@@ -52,6 +54,8 @@ export default function SchnellLadeModal({ onSave, onCancel }: Props) {
       geladene_kwh: parseFloat(geladenKwh) || 0,
       akkustand_start: parseFloat(akkuStart) || 0,
       akkustand_ende: parseFloat(akkuEnde) || 0,
+      reichweite_start_km: reichweiteStart ? parseFloat(reichweiteStart) : undefined,
+      reichweite_ende_km: reichweiteEnde ? parseFloat(reichweiteEnde) : undefined,
       anbieter, stationsname, stationsid, adresse,
       kosten_eur: parseFloat(kosten) || 0,
       tarif, status, notiz,
@@ -114,6 +118,36 @@ export default function SchnellLadeModal({ onSave, onCancel }: Props) {
                 </div>
               </div>
             )}
+          </div>
+
+          {/* Restreichweite */}
+          <div className="bg-slate-800 rounded-2xl border border-slate-700 p-4">
+            <h3 className="text-slate-300 font-semibold text-sm mb-3 flex items-center gap-2">
+              🛣️ Restreichweite
+            </h3>
+            <div className="flex items-center gap-3">
+              <div className="flex-1">
+                <label className="text-slate-400 text-xs block mb-1">Vor dem Laden (km)</label>
+                <input type="number" min="0"
+                  className="w-full bg-slate-700 border border-slate-600 rounded-xl px-3 py-3 text-white text-xl font-bold text-center focus:outline-none focus:border-blue-500"
+                  placeholder="—" value={reichweiteStart} onChange={e => setReichweiteStart(e.target.value)} />
+              </div>
+              <div className="text-slate-500 text-2xl pt-4">→</div>
+              <div className="flex-1">
+                <label className="text-slate-400 text-xs block mb-1">Nach dem Laden (km)</label>
+                <input type="number" min="0"
+                  className="w-full bg-slate-700 border border-slate-600 rounded-xl px-3 py-3 text-white text-xl font-bold text-center focus:outline-none focus:border-blue-500"
+                  placeholder="—" value={reichweiteEnde} onChange={e => setReichweiteEnde(e.target.value)} />
+              </div>
+            </div>
+            {reichweiteStart && reichweiteEnde && (() => {
+              const gewinn = parseFloat(reichweiteEnde) - parseFloat(reichweiteStart);
+              return (
+                <div className={`mt-3 text-center font-bold text-lg rounded-xl py-2 ${gewinn >= 0 ? "bg-blue-900/30 text-blue-300" : "bg-red-900/30 text-red-300"}`}>
+                  {gewinn >= 0 ? "+" : ""}{gewinn.toFixed(0)} km hinzugefügt
+                </div>
+              );
+            })()}
           </div>
 
           {/* Zeit */}
