@@ -158,13 +158,13 @@ export default function SchnellLadeModal({ onSave, onCancel }: Props) {
               <div>
                 <label className="text-slate-400 text-xs block mb-1">Ladestart</label>
                 <input type="datetime-local"
-                  className="w-full bg-slate-700 border border-slate-600 rounded-xl px-3 py-2.5 text-white text-sm focus:outline-none focus:border-yellow-500"
+                  className="w-full bg-slate-700 border border-slate-600 rounded-xl px-2 py-2.5 text-white text-xs focus:outline-none focus:border-yellow-500"
                   value={startzeit} onChange={e => setStartzeit(e.target.value)} required />
               </div>
               <div>
                 <label className="text-slate-400 text-xs block mb-1">Ladeende</label>
                 <input type="datetime-local"
-                  className="w-full bg-slate-700 border border-slate-600 rounded-xl px-3 py-2.5 text-white text-sm focus:outline-none focus:border-yellow-500"
+                  className="w-full bg-slate-700 border border-slate-600 rounded-xl px-2 py-2.5 text-white text-xs focus:outline-none focus:border-yellow-500"
                   value={endzeit} onChange={e => setEndzeit(e.target.value)} />
               </div>
             </div>
