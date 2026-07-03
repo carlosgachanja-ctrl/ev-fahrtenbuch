@@ -298,16 +298,14 @@ export default function SchnellLadeModal({ onSave, onCancel }: Props) {
               className="w-full bg-slate-700 border border-slate-600 rounded-xl px-3 py-2.5 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-green-500"
               placeholder="Notiz (optional)..." value={notiz} onChange={e => setNotiz(e.target.value)} />
           </div>
-        </form>
-      </div>
 
-      {/* Sticky Save Button */}
-      <div className="shrink-0 px-4 py-4 border-t border-slate-700"
-        style={{ background: "#0f172a", paddingBottom: "max(1rem, env(safe-area-inset-bottom))" }}>
-        <button type="submit" form="ladeform"
-          className="w-full bg-green-600 hover:bg-green-500 active:bg-green-700 text-white font-bold text-lg py-4 rounded-2xl transition-colors flex items-center justify-center gap-2 shadow-lg shadow-green-900/40">
-          <span>⚡</span> Ladevorgang speichern
-        </button>
+          {/* Speichern-Button direkt im Formular */}
+          <button type="submit"
+            className="w-full bg-green-600 hover:bg-green-500 active:bg-green-700 text-white font-bold text-xl py-5 rounded-2xl transition-colors flex items-center justify-center gap-2 shadow-lg shadow-green-900/40">
+            <span>⚡</span> Ladevorgang speichern
+          </button>
+
+        </form>
       </div>
     </div>
   );
