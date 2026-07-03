@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Ladevorgang, LadeTyp, Ladestatus } from "@/lib/types";
 import { genId } from "@/lib/store";
+import LadekarteDropdown, { Ladestation } from "./LadekarteDropdown";
 
 interface Props {
   onSave: (lv: Ladevorgang) => void;
@@ -205,19 +206,35 @@ export default function SchnellLadeModal({ onSave, onCancel }: Props) {
             </div>
           </div>
 
-          {/* Ladestation */}
+          {/* Ladestation – Karte + Dropdown */}
           <div className="bg-slate-800 rounded-2xl border border-slate-700 p-4">
             <h3 className="text-slate-300 font-semibold text-sm mb-3">📍 Ladestation</h3>
-            <div className="space-y-3">
+
+            {/* Google Maps Karte + automatisches Dropdown */}
+            <LadekarteDropdown
+              onSelect={(s: Ladestation) => {
+                setStationsname(s.name);
+                setAdresse(s.adresse);
+                // Anbieter aus dem Namen ableiten (erstes Wort / bekannte Namen)
+                const bekannt = ["IONITY", "EnBW", "Allego", "Fastned", "Tesla", "Aral", "Shell", "Lidl", "Aldi", "REWE", "Aldi"];
+                const gefunden = bekannt.find(b => s.name.toLowerCase().includes(b.toLowerCase()));
+                if (gefunden) setAnbieter(gefunden);
+                else setAnbieter(s.name.split(" ")[0]);
+              }}
+            />
+
+            {/* Manuelle Felder – werden automatisch befüllt, aber editierbar */}
+            <div className="space-y-3 mt-4 pt-4 border-t border-slate-700">
+              <p className="text-slate-500 text-xs">Automatisch befüllt – bei Bedarf anpassen:</p>
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="text-slate-400 text-xs block mb-1">Anbieter *</label>
+                  <label className="text-slate-400 text-xs block mb-1">Anbieter</label>
                   <input type="text"
                     className="w-full bg-slate-700 border border-slate-600 rounded-xl px-3 py-2.5 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-green-500"
                     placeholder="z.B. IONITY, EnBW" value={anbieter} onChange={e => setAnbieter(e.target.value)} required />
                 </div>
                 <div>
-                  <label className="text-slate-400 text-xs block mb-1">Stationsname *</label>
+                  <label className="text-slate-400 text-xs block mb-1">Stationsname</label>
                   <input type="text"
                     className="w-full bg-slate-700 border border-slate-600 rounded-xl px-3 py-2.5 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-green-500"
                     placeholder="z.B. Autohof A3" value={stationsname} onChange={e => setStationsname(e.target.value)} required />
