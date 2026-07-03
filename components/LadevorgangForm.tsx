@@ -60,7 +60,7 @@ export default function LadevorgangForm({ initial, onSave, onCancel }: Props) {
     onSave(lv);
   }
 
-  const LADETYPEN: LadeTyp[] = ["AC", "DC", "CCS", "Type2", "Wallbox", "Haushaltssteckdose"];
+  const LADETYPEN: LadeTyp[] = ["AC", "DC", "CCS", "Wallbox", "Haushaltssteckdose"];
 
   return (
     <div className="bg-slate-900/60 border border-yellow-600/30 rounded-xl p-4 mt-2">
