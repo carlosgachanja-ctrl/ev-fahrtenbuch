@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { Loader } from "@googlemaps/js-api-loader";
 
 export interface Ladestation {
   placeId: string;
@@ -52,11 +51,11 @@ export default function LadekarteDropdown({ onSelect }: Props) {
   }, []);
 
   async function ladeKarteUndStationen(lat: number, lng: number) {
-    const loader = new Loader({ apiKey: API_KEY, version: "weekly" });
-    const { Map } = await loader.importLibrary("maps") as google.maps.MapsLibrary;
-    await loader.importLibrary("places");
+    await loadGoogleMaps(API_KEY);
 
-    const map = new Map(mapRef.current!, {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const g = (window as any).google;
+    const map = new g.maps.Map(mapRef.current!, {
       center: { lat, lng },
       zoom: 14,
       mapTypeControl: false,
@@ -75,11 +74,11 @@ export default function LadekarteDropdown({ onSelect }: Props) {
     mapInstanceRef.current = map;
 
     // Eigener Standort Marker
-    new google.maps.Marker({
+    new g.maps.Marker({
       position: { lat, lng },
       map,
       icon: {
-        path: google.maps.SymbolPath.CIRCLE,
+        path: g.maps.SymbolPath.CIRCLE,
         scale: 8,
         fillColor: "#3b82f6",
         fillOpacity: 1,
@@ -91,15 +90,15 @@ export default function LadekarteDropdown({ onSelect }: Props) {
     });
 
     // Nearby EV Charging Stations suchen
-    const service = new google.maps.places.PlacesService(map);
+    const service = new g.maps.places.PlacesService(map);
     service.nearbySearch(
       {
         location: { lat, lng },
         radius: 5000,
         type: "electric_vehicle_charging_station",
       },
-      (results, status) => {
-        if (status !== google.maps.places.PlacesServiceStatus.OK || !results) {
+      (results: google.maps.places.PlaceResult[] | null, status: string) => {
+        if (status !== g.maps.places.PlacesServiceStatus.OK || !results) {
           setStatus("error");
           setErrorMsg("Keine Ladestationen in der Nähe gefunden.");
           return;
@@ -127,7 +126,7 @@ export default function LadekarteDropdown({ onSelect }: Props) {
         // Marker für jede Station
         markersRef.current.forEach(m => m.setMap(null));
         markersRef.current = liste.map((s, i) => {
-          const marker = new google.maps.Marker({
+          const marker = new g.maps.Marker({
             position: { lat: s.lat, lng: s.lng },
             map,
             title: s.name,
@@ -138,7 +137,7 @@ export default function LadekarteDropdown({ onSelect }: Props) {
               fontWeight: "bold",
             },
             icon: {
-              path: google.maps.SymbolPath.CIRCLE,
+              path: g.maps.SymbolPath.CIRCLE,
               scale: 14,
               fillColor: "#16a34a",
               fillOpacity: 1,
@@ -267,6 +266,28 @@ export default function LadekarteDropdown({ onSelect }: Props) {
       )}
     </div>
   );
+}
+
+// Google Maps Script dynamisch laden (einmalig)
+function loadGoogleMaps(apiKey: string): Promise<void> {
+  return new Promise((resolve, reject) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    if ((window as any).google?.maps) { resolve(); return; }
+    const existing = document.getElementById("gmap-script");
+    if (existing) {
+      existing.addEventListener("load", () => resolve());
+      existing.addEventListener("error", reject);
+      return;
+    }
+    const script = document.createElement("script");
+    script.id = "gmap-script";
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places`;
+    script.async = true;
+    script.defer = true;
+    script.onload = () => resolve();
+    script.onerror = reject;
+    document.head.appendChild(script);
+  });
 }
 
 // Haversine Formel für Entfernung in Metern
