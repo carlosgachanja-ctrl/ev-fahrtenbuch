@@ -52,10 +52,11 @@ export default function LadekarteDropdown({ onSelect }: Props) {
   }, []);
 
   async function ladeKarteUndStationen(lat: number, lng: number) {
-    const loader = new Loader({ apiKey: API_KEY, version: "weekly", libraries: ["places"] });
-    await loader.load();
+    const loader = new Loader({ apiKey: API_KEY, version: "weekly" });
+    const { Map } = await loader.importLibrary("maps") as google.maps.MapsLibrary;
+    await loader.importLibrary("places");
 
-    const map = new google.maps.Map(mapRef.current!, {
+    const map = new Map(mapRef.current!, {
       center: { lat, lng },
       zoom: 14,
       mapTypeControl: false,
