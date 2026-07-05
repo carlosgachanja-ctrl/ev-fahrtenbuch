@@ -7,8 +7,9 @@ import FahrtenListe from "./FahrtenListe";
 import StatsDashboard from "./StatsDashboard";
 import FahrzeugSettings from "./FahrzeugSettings";
 import SchnellLadeModal from "./SchnellLadeModal";
+import DatenVerwaltung from "./DatenVerwaltung";
 
-type View = "liste" | "stats" | "fahrzeug";
+type View = "liste" | "stats" | "fahrzeug" | "daten";
 
 export default function FahrtenbuchApp() {
   const [data, setData] = useState<FahrtenbuchData | null>(null);
@@ -113,10 +114,10 @@ export default function FahrtenbuchApp() {
         {/* Nav */}
         {!showForm && (
           <div className="max-w-5xl mx-auto px-4 pb-0 flex gap-0 border-t border-slate-800">
-            {(["liste", "stats", "fahrzeug"] as View[]).map(v => (
+            {(["liste", "stats", "fahrzeug", "daten"] as View[]).map(v => (
               <button key={v} onClick={() => setView(v)}
-                className={`px-4 py-2.5 text-sm font-medium transition-colors border-b-2 ${view === v ? "border-green-500 text-green-400" : "border-transparent text-slate-400 hover:text-white"}`}>
-                {v === "liste" ? "📋 Fahrten" : v === "stats" ? "📊 Auswertung" : "🚗 Fahrzeug"}
+                className={`px-3 py-2.5 text-sm font-medium transition-colors border-b-2 ${view === v ? "border-green-500 text-green-400" : "border-transparent text-slate-400 hover:text-white"}`}>
+                {v === "liste" ? "📋 Fahrten" : v === "stats" ? "📊 Stats" : v === "fahrzeug" ? "🚗 Auto" : "💾 Daten"}
               </button>
             ))}
           </div>
@@ -141,8 +142,10 @@ export default function FahrtenbuchApp() {
           <FahrtenListe fahrten={data.fahrten} onEdit={handleEdit} onDelete={handleDelete} />
         ) : view === "stats" ? (
           <StatsDashboard fahrten={data.fahrten} fahrzeug={data.fahrzeug} />
-        ) : (
+        ) : view === "fahrzeug" ? (
           <FahrzeugSettings fahrzeug={data.fahrzeug} onSave={fz => { const d = loadData(); d.fahrzeug = fz; saveData(d); refresh(); }} />
+        ) : (
+          <DatenVerwaltung onImport={refresh} />
         )}
       </main>
 
