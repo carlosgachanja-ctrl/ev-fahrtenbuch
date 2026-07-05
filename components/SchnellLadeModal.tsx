@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Ladevorgang, LadeTyp, Ladestatus } from "@/lib/types";
 import { genId } from "@/lib/store";
 import LadekarteDropdown, { Ladestation } from "./LadekarteDropdown";
@@ -34,7 +34,29 @@ export default function SchnellLadeModal({ onSave, onCancel }: Props) {
   const [tarif, setTarif] = useState("");
   const [status, setStatus] = useState<Ladestatus>("vollständig");
   const [temperatur, setTemperatur] = useState("");
+  const [tempLaden, setTempLaden] = useState(false);
   const [notiz, setNotiz] = useState("");
+
+  // Temperatur automatisch via Open-Meteo abrufen
+  useEffect(() => {
+    setTempLaden(true);
+    navigator.geolocation.getCurrentPosition(
+      async (pos) => {
+        try {
+          const { latitude: lat, longitude: lng } = pos.coords;
+          const res = await fetch(
+            `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&current=temperature_2m`
+          );
+          const json = await res.json();
+          const temp = json?.current?.temperature_2m;
+          if (temp !== undefined) setTemperatur(String(Math.round(temp)));
+        } catch { /* still manual */ }
+        setTempLaden(false);
+      },
+      () => setTempLaden(false),
+      { timeout: 8000, maximumAge: 300000 }
+    );
+  }, []);
 
   // €/kWh aus Tarif-Feld extrahieren und Kosten automatisch berechnen
   function parsePreisProKwh(t: string): number | null {
@@ -322,10 +344,19 @@ export default function SchnellLadeModal({ onSave, onCancel }: Props) {
             </div>
             <div className="grid grid-cols-2 gap-3 mt-3">
               <div>
-                <label className="text-slate-400 text-xs block mb-1">🌡️ Außentemperatur (°C)</label>
-                <input type="number" step="1"
-                  className="w-full bg-slate-700 border border-slate-600 rounded-xl px-3 py-2.5 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-green-500"
-                  placeholder="z.B. 8" value={temperatur} onChange={e => setTemperatur(e.target.value)} />
+                <label className="text-slate-400 text-xs block mb-1">
+                  🌡️ Außentemperatur (°C)
+                  {tempLaden && <span className="text-slate-500 ml-1">…</span>}
+                </label>
+                <div className="relative">
+                  <input type="number" step="1"
+                    className="w-full bg-slate-700 border border-slate-600 rounded-xl px-3 py-2.5 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-green-500"
+                    placeholder={tempLaden ? "wird geladen…" : "z.B. 8"}
+                    value={temperatur} onChange={e => setTemperatur(e.target.value)} />
+                  {temperatur && !tempLaden && (
+                    <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-green-400">●</span>
+                  )}
+                </div>
               </div>
               <div>
                 <label className="text-slate-400 text-xs block mb-1">📝 Notiz</label>
