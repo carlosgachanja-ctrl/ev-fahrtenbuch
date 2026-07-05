@@ -20,6 +20,7 @@ export interface Ladevorgang {
   kosten_eur: number;
   tarif?: string;
   status: Ladestatus;
+  temperatur_c?: number; // Außentemperatur beim Laden
   notiz?: string;
 }
 

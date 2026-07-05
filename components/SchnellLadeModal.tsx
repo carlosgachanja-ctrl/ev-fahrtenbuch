@@ -33,6 +33,7 @@ export default function SchnellLadeModal({ onSave, onCancel }: Props) {
   const [kosten, setKosten] = useState("");
   const [tarif, setTarif] = useState("");
   const [status, setStatus] = useState<Ladestatus>("vollständig");
+  const [temperatur, setTemperatur] = useState("");
   const [notiz, setNotiz] = useState("");
 
   // €/kWh aus Tarif-Feld extrahieren und Kosten automatisch berechnen
@@ -84,6 +85,7 @@ export default function SchnellLadeModal({ onSave, onCancel }: Props) {
       anbieter, stationsname, stationsid, adresse,
       kosten_eur: parseFloat(kosten) || 0,
       tarif, status, notiz,
+      temperatur_c: temperatur ? parseFloat(temperatur) : undefined,
     });
   }
 
@@ -318,9 +320,20 @@ export default function SchnellLadeModal({ onSave, onCancel }: Props) {
                 </button>
               ))}
             </div>
-            <input type="text"
-              className="w-full bg-slate-700 border border-slate-600 rounded-xl px-3 py-2.5 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-green-500"
-              placeholder="Notiz (optional)..." value={notiz} onChange={e => setNotiz(e.target.value)} />
+            <div className="grid grid-cols-2 gap-3 mt-3">
+              <div>
+                <label className="text-slate-400 text-xs block mb-1">🌡️ Außentemperatur (°C)</label>
+                <input type="number" step="1"
+                  className="w-full bg-slate-700 border border-slate-600 rounded-xl px-3 py-2.5 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-green-500"
+                  placeholder="z.B. 8" value={temperatur} onChange={e => setTemperatur(e.target.value)} />
+              </div>
+              <div>
+                <label className="text-slate-400 text-xs block mb-1">📝 Notiz</label>
+                <input type="text"
+                  className="w-full bg-slate-700 border border-slate-600 rounded-xl px-3 py-2.5 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-green-500"
+                  placeholder="Optional..." value={notiz} onChange={e => setNotiz(e.target.value)} />
+              </div>
+            </div>
           </div>
 
           {/* Speichern-Button direkt im Formular */}

@@ -8,8 +8,9 @@ import StatsDashboard from "./StatsDashboard";
 import FahrzeugSettings from "./FahrzeugSettings";
 import SchnellLadeModal from "./SchnellLadeModal";
 import DatenVerwaltung from "./DatenVerwaltung";
+import AnalysePage from "./AnalysePage";
 
-type View = "liste" | "stats" | "fahrzeug" | "daten";
+type View = "liste" | "stats" | "analyse" | "fahrzeug" | "daten";
 
 export default function FahrtenbuchApp() {
   const [data, setData] = useState<FahrtenbuchData | null>(null);
@@ -114,10 +115,10 @@ export default function FahrtenbuchApp() {
         {/* Nav */}
         {!showForm && (
           <div className="max-w-5xl mx-auto px-4 pb-0 flex gap-0 border-t border-slate-800">
-            {(["liste", "stats", "fahrzeug", "daten"] as View[]).map(v => (
+            {(["liste", "stats", "analyse", "fahrzeug", "daten"] as View[]).map(v => (
               <button key={v} onClick={() => setView(v)}
-                className={`px-3 py-2.5 text-sm font-medium transition-colors border-b-2 ${view === v ? "border-green-500 text-green-400" : "border-transparent text-slate-400 hover:text-white"}`}>
-                {v === "liste" ? "📋 Fahrten" : v === "stats" ? "📊 Stats" : v === "fahrzeug" ? "🚗 Auto" : "💾 Daten"}
+                className={`px-2.5 py-2.5 text-xs font-medium transition-colors border-b-2 ${view === v ? "border-green-500 text-green-400" : "border-transparent text-slate-400 hover:text-white"}`}>
+                {v === "liste" ? "📋 Fahrten" : v === "stats" ? "📊 Stats" : v === "analyse" ? "🔬 Analyse" : v === "fahrzeug" ? "🚗 Auto" : "💾 Daten"}
               </button>
             ))}
           </div>
@@ -142,6 +143,8 @@ export default function FahrtenbuchApp() {
           <FahrtenListe fahrten={data.fahrten} onEdit={handleEdit} onDelete={handleDelete} />
         ) : view === "stats" ? (
           <StatsDashboard fahrten={data.fahrten} fahrzeug={data.fahrzeug} />
+        ) : view === "analyse" ? (
+          <AnalysePage fahrten={data.fahrten} fahrzeug={data.fahrzeug} />
         ) : view === "fahrzeug" ? (
           <FahrzeugSettings fahrzeug={data.fahrzeug} onSave={fz => { const d = loadData(); d.fahrzeug = fz; saveData(d); refresh(); }} />
         ) : (
