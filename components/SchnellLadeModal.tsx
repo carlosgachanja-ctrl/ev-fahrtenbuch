@@ -92,42 +92,56 @@ export default function SchnellLadeModal({ onSave, onCancel }: Props) {
     return h > 0 ? `${h}h ${m}min` : `${m}min`;
   })();
 
-  function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    // Tastatur auf iOS schließen
+  function handleSpeichern() {
+    if (!geladenKwh) { alert("Bitte geladene kWh eintragen."); return; }
+    if (!anbieter) { alert("Bitte Anbieter eintragen."); return; }
+    if (!stationsname) { alert("Bitte Stationsname eintragen."); return; }
+
+    // iOS Keyboard zuverlässig schließen: temporäres readonly-Input fokussieren
+    const tmp = document.createElement("input");
+    tmp.setAttribute("type", "text");
+    tmp.setAttribute("readonly", "true");
+    tmp.style.cssText = "position:fixed;top:0;left:0;width:1px;height:1px;opacity:0;";
+    document.body.appendChild(tmp);
+    tmp.focus();
+    tmp.blur();
+    document.body.removeChild(tmp);
     (document.activeElement as HTMLElement)?.blur();
+
     setGespeichert(true);
+
     setTimeout(() => {
       onSave({
-      id: genId(),
-      startzeit: new Date(startzeit).toISOString(),
-      endzeit: endzeit ? new Date(endzeit).toISOString() : new Date(startzeit).toISOString(),
-      ladetyp,
-      ladeleistung_kw: parseFloat(ladeleistung) || 0,
-      geladene_kwh: parseFloat(geladenKwh) || 0,
-      akkustand_start: parseFloat(akkuStart) || 0,
-      akkustand_ende: parseFloat(akkuEnde) || 0,
-      reichweite_start_km: reichweiteStart ? parseFloat(reichweiteStart) : undefined,
-      reichweite_ende_km: reichweiteEnde ? parseFloat(reichweiteEnde) : undefined,
-      anbieter, stationsname, stationsid, adresse,
-      kosten_eur: parseFloat(kosten) || 0,
-      tarif, status, notiz,
-      temperatur_c: temperatur ? parseFloat(temperatur) : undefined,
-    });
-    }, 800);
+        id: genId(),
+        startzeit: new Date(startzeit).toISOString(),
+        endzeit: endzeit ? new Date(endzeit).toISOString() : new Date(startzeit).toISOString(),
+        ladetyp,
+        ladeleistung_kw: parseFloat(ladeleistung) || 0,
+        geladene_kwh: parseFloat(geladenKwh) || 0,
+        akkustand_start: parseFloat(akkuStart) || 0,
+        akkustand_ende: parseFloat(akkuEnde) || 0,
+        reichweite_start_km: reichweiteStart ? parseFloat(reichweiteStart) : undefined,
+        reichweite_ende_km: reichweiteEnde ? parseFloat(reichweiteEnde) : undefined,
+        anbieter, stationsname, stationsid, adresse,
+        kosten_eur: parseFloat(kosten) || 0,
+        tarif, status, notiz,
+        temperatur_c: temperatur ? parseFloat(temperatur) : undefined,
+      });
+    }, 1200);
   }
 
-  // Erfolgs-Screen
+  // Erfolgs-Overlay — z-[200] damit es über allem liegt, auch über Tastatur-Bereich
   if (gespeichert) {
     return (
-      <div className="fixed inset-0 z-50 flex flex-col items-center justify-center gap-6" style={{ background: "#0f172a" }}>
-        <div className="w-24 h-24 rounded-full bg-green-600 flex items-center justify-center shadow-2xl shadow-green-900/60">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+      <div className="fixed inset-0 z-[200] flex flex-col items-center justify-center gap-6"
+        style={{ background: "#0f172a" }}>
+        <div className="w-28 h-28 rounded-full bg-green-600 flex items-center justify-center shadow-2xl shadow-green-900/60">
+          <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <polyline points="20 6 9 17 4 12" />
           </svg>
         </div>
         <div className="text-center">
-          <p className="text-white font-bold text-2xl mb-1">Gespeichert!</p>
+          <p className="text-white font-bold text-3xl mb-2">Gespeichert!</p>
           <p className="text-slate-400 text-sm">Ladevorgang wurde erfasst</p>
         </div>
       </div>
@@ -155,7 +169,7 @@ export default function SchnellLadeModal({ onSave, onCancel }: Props) {
 
       {/* Scrollable form */}
       <div className="flex-1 overflow-y-auto">
-        <form id="ladeform" onSubmit={handleSubmit} className="px-4 py-4 space-y-5 pb-32">
+        <div className="px-4 py-4 space-y-5 pb-32">
 
           {/* Akkustand – ganz oben, groß */}
           <div className="bg-slate-800 rounded-2xl border border-slate-700 p-4">
@@ -391,12 +405,12 @@ export default function SchnellLadeModal({ onSave, onCancel }: Props) {
           </div>
 
           {/* Speichern-Button direkt im Formular */}
-          <button type="submit"
+          <button type="button" onClick={handleSpeichern}
             className="w-full bg-green-600 hover:bg-green-500 active:bg-green-700 text-white font-bold text-xl py-5 rounded-2xl transition-colors flex items-center justify-center gap-2 shadow-lg shadow-green-900/40">
             <span>⚡</span> Ladevorgang speichern
           </button>
 
-        </form>
+        </div>
       </div>
     </div>
   );
