@@ -36,6 +36,7 @@ export default function SchnellLadeModal({ onSave, onCancel }: Props) {
   const [temperatur, setTemperatur] = useState("");
   const [tempLaden, setTempLaden] = useState(false);
   const [notiz, setNotiz] = useState("");
+  const [gespeichert, setGespeichert] = useState(false);
 
   // Temperatur automatisch via Open-Meteo abrufen
   useEffect(() => {
@@ -93,7 +94,11 @@ export default function SchnellLadeModal({ onSave, onCancel }: Props) {
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    onSave({
+    // Tastatur auf iOS schließen
+    (document.activeElement as HTMLElement)?.blur();
+    setGespeichert(true);
+    setTimeout(() => {
+      onSave({
       id: genId(),
       startzeit: new Date(startzeit).toISOString(),
       endzeit: endzeit ? new Date(endzeit).toISOString() : new Date(startzeit).toISOString(),
@@ -109,6 +114,24 @@ export default function SchnellLadeModal({ onSave, onCancel }: Props) {
       tarif, status, notiz,
       temperatur_c: temperatur ? parseFloat(temperatur) : undefined,
     });
+    }, 800);
+  }
+
+  // Erfolgs-Screen
+  if (gespeichert) {
+    return (
+      <div className="fixed inset-0 z-50 flex flex-col items-center justify-center gap-6" style={{ background: "#0f172a" }}>
+        <div className="w-24 h-24 rounded-full bg-green-600 flex items-center justify-center shadow-2xl shadow-green-900/60">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="20 6 9 17 4 12" />
+          </svg>
+        </div>
+        <div className="text-center">
+          <p className="text-white font-bold text-2xl mb-1">Gespeichert!</p>
+          <p className="text-slate-400 text-sm">Ladevorgang wurde erfasst</p>
+        </div>
+      </div>
+    );
   }
 
   return (
