@@ -97,37 +97,34 @@ export default function SchnellLadeModal({ onSave, onCancel }: Props) {
     if (!anbieter) { alert("Bitte Anbieter eintragen."); return; }
     if (!stationsname) { alert("Bitte Stationsname eintragen."); return; }
 
-    // iOS Keyboard zuverlässig schließen: temporäres readonly-Input fokussieren
-    const tmp = document.createElement("input");
-    tmp.setAttribute("type", "text");
-    tmp.setAttribute("readonly", "true");
-    tmp.style.cssText = "position:fixed;top:0;left:0;width:1px;height:1px;opacity:0;";
-    document.body.appendChild(tmp);
-    tmp.focus();
-    tmp.blur();
-    document.body.removeChild(tmp);
+    // Schritt 1: alle Inputs blurren damit iOS Tastatur schliesst
     (document.activeElement as HTMLElement)?.blur();
+    document.querySelectorAll("input, textarea, select").forEach(el => (el as HTMLElement).blur());
 
-    setGespeichert(true);
-
+    // Schritt 2: 350ms warten bis iOS-Tastatur-Animation fertig ist, DANN Erfolgsscreen
     setTimeout(() => {
-      onSave({
-        id: genId(),
-        startzeit: new Date(startzeit).toISOString(),
-        endzeit: endzeit ? new Date(endzeit).toISOString() : new Date(startzeit).toISOString(),
-        ladetyp,
-        ladeleistung_kw: parseFloat(ladeleistung) || 0,
-        geladene_kwh: parseFloat(geladenKwh) || 0,
-        akkustand_start: parseFloat(akkuStart) || 0,
-        akkustand_ende: parseFloat(akkuEnde) || 0,
-        reichweite_start_km: reichweiteStart ? parseFloat(reichweiteStart) : undefined,
-        reichweite_ende_km: reichweiteEnde ? parseFloat(reichweiteEnde) : undefined,
-        anbieter, stationsname, stationsid, adresse,
-        kosten_eur: parseFloat(kosten) || 0,
-        tarif, status, notiz,
-        temperatur_c: temperatur ? parseFloat(temperatur) : undefined,
-      });
-    }, 1200);
+      setGespeichert(true);
+
+      // Schritt 3: nach Erfolgsscreen speichern und schliessen
+      setTimeout(() => {
+        onSave({
+          id: genId(),
+          startzeit: new Date(startzeit).toISOString(),
+          endzeit: endzeit ? new Date(endzeit).toISOString() : new Date(startzeit).toISOString(),
+          ladetyp,
+          ladeleistung_kw: parseFloat(ladeleistung) || 0,
+          geladene_kwh: parseFloat(geladenKwh) || 0,
+          akkustand_start: parseFloat(akkuStart) || 0,
+          akkustand_ende: parseFloat(akkuEnde) || 0,
+          reichweite_start_km: reichweiteStart ? parseFloat(reichweiteStart) : undefined,
+          reichweite_ende_km: reichweiteEnde ? parseFloat(reichweiteEnde) : undefined,
+          anbieter, stationsname, stationsid, adresse,
+          kosten_eur: parseFloat(kosten) || 0,
+          tarif, status, notiz,
+          temperatur_c: temperatur ? parseFloat(temperatur) : undefined,
+        });
+      }, 1000);
+    }, 350);
   }
 
   // Erfolgs-Overlay — z-[200] damit es über allem liegt, auch über Tastatur-Bereich
