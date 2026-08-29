@@ -70,7 +70,12 @@ Größenordnung basierend auf der kuratierten Liste: **ca. 25–35 nennenswerte,
 - **Link/Barcode-Scan:** Nutzer fügen ein Produktfoto/einen Produktlink manuell hinzu, die App zieht sich Bild/Metadaten von der öffentlichen Produktseite.
 - **Screenshot-/Teilen-Funktion:** Teilen-Menü aus dem Browser/der Retailer-App heraus direkt in die Kleiderschrank-App.
 - **Ausnahme Zalando:** Hier ist die Integration **nativ und offiziell** – als Teil der Zalando-App selbst gibt es eine "Wardrobe"-Funktion, in die gekaufte Zalando-Artikel automatisch übernommen werden (in Deutschland allein wurden laut Zalando über 1 Mio. Artikel in "Zalando Wardrobe" eingetragen); zusätzlich existiert "Shop the Look" zum Nachkaufen kompletter Outfits.
-- Eine **direkte H&M-API-Anbindung** an eine dritte Kleiderschrank-App wurde in der Recherche **nicht gefunden** – das ist keine verbreitete Praxis am Markt.
+- **Vertiefte Prüfung "echte H&M-API-Partnerschaft":** Es wurde gezielt untersucht, ob eine Kleiderschrank-App eine offizielle, von H&M autorisierte API-Anbindung besitzt. Ergebnis: **keine gefunden.**
+  - H&M Group betreibt zwar ein offizielles API-Entwicklerportal ("HAPI", `portal.api.hmgroup.com` / `portal.hapi.hmgroup.com`, inkl. Test-Umgebung). Dieses ist jedoch technisch mit dem **Supplier Portal** (`supplierportal.hm.com`) verknüpft und richtet sich damit erkennbar an **B2B-Zulieferer/Logistikpartner** (Beschaffungskette), nicht an Endkunden-App-Entwickler. Es gibt keinen Hinweis, dass Wardrobe-Apps dort Zugriff auf Produktkatalog-/Bilddaten erhalten.
+  - Alle öffentlich auffindbaren "H&M-APIs" (Apify, Retailed.io, BrightData, RealDataAPI, APIDojo, ein öffentliches GitHub-Repo) sind **inoffizielle Scraper** der öffentlichen H&M-Webseite – explizit als nicht-offiziell gekennzeichnet und potenziell mit den H&M-Nutzungsbedingungen unvereinbar.
+  - H&M investiert über seine Venture-Einheit **H&M CO:LAB / H&M Group Ventures** (gegründet 2015, Stockholm, >3 Mrd. SEK investiert, 35 Portfoliounternehmen, Fokus zirkuläre Mode/Materialien/Retail-Tech) u. a. 13 Mio. USD in **Thread**, einen KI- + Human-Stylisten-Service für Herrenmode. Das ist jedoch eine **Kapitalbeteiligung**, kein Daten-/API-Partnerschaftsvertrag – und Thread ist selbst kein Foto-Kleiderschrank, sondern ein Empfehlungs-/Shopping-Service.
+  - Der einzige belegte Fall einer **echten, nativen** Retailer-Wardrobe-Integration bleibt **Zalando** (s. o.) – dabei handelt es sich aber um einen Retailer, der eine Wardrobe-Funktion in seine **eigene** App integriert, nicht um eine Drittanbieter-API-Partnerschaft.
+  - **Schlussfolgerung:** Für ein Feature "H&M-Produktbilder lizenzkonform in eine dritte Kleiderschrank-App einbinden" existiert am Markt **kein Präzedenzfall über eine offene/öffentliche Schnittstelle**. Umsetzbar wäre das nur über eine eigens verhandelte, nicht-öffentliche Geschäftspartnerschaft mit H&M – nicht über eine bestehende offene API.
 
 ### 2.3 "Outfits verknüpfen / das passt gut zusammen" – Schnittstelle zu Modemagazinen?
 
@@ -137,3 +142,8 @@ Ein erheblicher Teil der auffindbaren "Vergleichs-/Ranking"-Artikel (getwardrobe
 - https://play.google.com/store/apps/details?id=com.combyne.app
 - https://mwm.ai/apps/whering-your-digital-closet/1519461680
 - https://codelabs.developers.google.com/smart-stylist-app (technische Referenzarchitektur KI-Styling)
+- https://portal.api.hmgroup.com/ (offizielles H&M-Entwicklerportal "HAPI", B2B-/Supplier-fokussiert)
+- https://supplierportal.hm.com/ (H&M Group Supplier Portal, technisch verknüpft mit HAPI)
+- https://hmgroup.com/news/hm-group-continues-investment-in-startups-to-enable-a-more-circular-fashion-future/ (H&M CO:LAB/Group Ventures Portfolio)
+- https://www.retaildive.com/news/hm-invests-13m-in-ai-driven-menswear-startup-thread/539881 (H&M-Investment in Thread)
+- https://www.retailed.io/datasources/api/hm-product (Beispiel eines inoffiziellen H&M-Scrapers, nicht autorisiert)
