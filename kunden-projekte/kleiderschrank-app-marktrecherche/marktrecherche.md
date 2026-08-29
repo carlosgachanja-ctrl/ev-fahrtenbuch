@@ -149,12 +149,82 @@ Es existiert **kein eigener EU-Fördertopf speziell für "Kleiderschrank-Apps"**
 
 ---
 
-## 6. Empfehlung für nächste Schritte
+## 6. Vertiefte Förderlandkarte: Baden-Württemberg, Hamburg, Hessen (KI-/Softwareentwicklung + Female Empowerment) – vom kleinsten Kreis bis zur EU
+
+Auf Wunsch vertieft: eine Förderleiter je Bundesland von der kommunalen/regionalen Ebene über das Land und den Bund bis zur EU, inklusive der Frage, was speziell für Frauen in technischen Berufen/Gründerinnen zusätzlich abschöpfbar ist. Alle Angaben Stand der Recherche 29.08.2026; Fristen und Fördersätze ändern sich regelmäßig – vor Antragstellung immer die Originalquelle prüfen.
+
+### 6.1 Baden-Württemberg
+
+| Ebene | Programm | Kern |
+|---|---|---|
+| Kommunal/Regional | Regionale Digital-Hubs/Gründerzentren (z. B. Cyberforum Karlsruhe), Cyber Valley Stuttgart/Tübingen (KI-Forschungsökosystem mit Ausgründungsanbindung) | Beratung, Vernetzung, teils Ausgründungsförderung |
+| Land | **Innovationsgutschein Hightech BW** | Bis 20.000 €, 50 % Förderquote, für anspruchsvolle F&E-/Beratungsleistungen von KMU |
+| Land | **Innovationsgutschein Start-up BW** | Bis 20.000 €, 50 %, für Start-ups bis 5 Jahre nach Gründung inkl. Vorgründungsphase |
+| Land | **Innovationsgutschein "Mittelstand trifft Start-up"** (neu, ab 1.1.2026) | Kooperationsförderung KMU (≤250 MA) ↔ Start-up |
+| Land | **L-Bank Digitalisierungsfinanzierung** (löst seit 1.7.2025 die Innovationsfinanzierung 4.0 ab) | Zinsverbilligte Darlehen + Tilgungszuschüsse; eigener KI-Förderschwerpunkt inkl. kostenlosem "L-Bank KI-Check" |
+| Land | **Invest BW** | 3 Förderlinien, u. a. explizit für digitale Geschäftsprozesse/KI-gestützte Anwendungen/Dateninfrastruktur |
+| Land, Female | **Start-up BW Women** | Female Accelerator, Konsortium von 6 BW-Hochschulen (Federführung: Traces/Hochschule für Technik Stuttgart); Qualifizierung, Mentoring, Netzwerk für Gründerinnen aus Wissenschaft/Hochschule |
+| Bund | EXIST-Gründerstipendium, **EXIST-Women** (bundesweit, s. 6.5), High-Tech Gründerfonds | s. Kap. 5.3 |
+| EU | s. 6.4 | |
+
+### 6.2 Hamburg
+
+| Ebene | Programm | Kern |
+|---|---|---|
+| Kommunal/Regional | Startup City Hamburg-Netzwerk, Hamburg Investors Network (HIN) mit **Female StartAperitivo** | Vernetzung Gründerinnen ↔ Business Angels |
+| Land (über IFB Hamburg / IFB Innovationsstarter GmbH) | **InnoRampUp** | Nicht rückzahlbare Zuschüsse für Deep-Tech-Start-ups (max. 2 Jahre alt) zur Überführung von Forschungsergebnissen in marktfähige Produkte/Prototypen |
+| Land | **InnovationFocus KI und Robotik** | Explizite Förderlinie speziell für KI-/Robotik-Projekte – direktester Treffer für ein KI-Software-Vorhaben |
+| Land | InnoFounder, InnoImpact, InnoFinTech | Weitere Bausteine der IFB-Förderkette je nach Gründungsphase/Branche |
+| Land, Female | **Female Founders Program des Hamburger Senats** (seit 2022) | Unterstützung bei Finanzierung, Recht, Business Development gezielt für Gründerinnen |
+| Land, Female | **Migrant Female Business (MiFeB)**, Träger ASM e. V. | Beratung/Mentoring/Fördermittelzugang für Gründerinnen mit Migrationshintergrund |
+| Bund | **EXIST-Women** (auch aktiv beworben über die HAW Hamburg), High-Tech Gründerfonds | s. Kap. 5.3 |
+| EU | s. 6.4 | |
+
+### 6.3 Hessen
+
+| Ebene | Programm | Kern |
+|---|---|---|
+| Kommunal/Regional | **TechQuartier Frankfurt** | Hessens führendes Start-up-/Innovationszentrum, Fokus FinTech/KI/Blockchain/Nachhaltigkeit; Coworking, Accelerator, Investorennetzwerk |
+| Land | **Distr@l** ("Digitalisierung stärken – Transfer leben", Hessisches Digitalministerium) | 6 Förderlinien von Machbarkeitsstudie bis Wachstumsförderung, Zuschüsse bis 1 Mio. €, technologieoffen für digitale Innovationsprojekte (KI/Software eingeschlossen); Fristen 2026: 22.2./26.4. (Linien 1–2), 15.2./12.4. (Linie 4) |
+| Land | **Digitalisierungsprämie Hessen** | 50 % Zuschuss bis 10.000 € für neue digitale Systeme/IT-Sicherheit |
+| Land | **Hessen-Kapital I/III**, **Futury Venture Fund** | Beteiligungskapital für Wachstumsfinanzierung |
+| Land | **Hessen-Ideenstipendium**, **Hessen-Mikrodarlehen/Mikrocrowd** | Frühphasen-Stipendium bzw. Kleinkredite für Gründer:innen |
+| Land, Female | Koordinierungsstelle **"Frauen und Wirtschaft"** + Hessischer Unternehmerinnentag | Vernetzung/Sichtbarkeit für Gründerinnen und Unternehmerinnen (keine Direktförderung) |
+| Bund | EXIST-Women, HTGF, EXIST-Gründerstipendium | s. Kap. 5.3 |
+| EU | s. 6.4 | |
+
+### 6.4 EU-Ebene (gleichermaßen zugänglich für alle drei Bundesländer)
+
+- **Digital Europe Programme (DIGITAL)**: ca. 8,2 Mrd. € EU-weites Gesamtbudget; Förderschwerpunkte KI, Cybersicherheit, High Performance Computing, Cloud/Daten, digitale Kompetenzen. Praktischer KMU-Zugang meist über die **European Digital Innovation Hubs (EDIH)** – regionale "One-Stop-Shops" mit kostenlosen/teilsubventionierten Beratungs-, Test- und Finanzierungslotsendiensten; EDIHs existieren auch in BW, Hamburg und Hessen.
+- **EIC Accelerator** (Horizon Europe): 0,5–2,5 Mio. € Zuschuss und/oder 0,5–10 Mio. € Beteiligungskapital; Voraussetzung TRL 5–6 und "bahnbrechende" Innovation (s. auch Kap. 5.3).
+- **Women TechEU** (EIC/Horizon Europe): **75.000 € nicht-verwässerndes Stipendium** je Start-up plus persönliches Business-Development-Programm (Mentoring, Matchmaking mit Investoren); Voraussetzung: Frau in Top-Management-Position (CEO/CTO o. ä.) und ≥ 25 % Firmenanteile. Neue Kohorte 2026–2028 mit 12 Mio. € Gesamtbudget für 160 Start-ups EU-weit – der direkteste EU-Fördertopf für eine von einer Frau (mit-)geführte KI-/Tech-Gründung.
+- **EmpoWomen** (Horizon Europe, Laufzeit 2023–2025, damit reguläre Bewerbungsphase abgeschlossen): 2 Mio. € Gesamtbudget, ebenfalls 75.000 € je Start-up plus Accelerator; Zielgruppe waren explizit "Widening"-Länder (Süd-/Osteuropa/Ukraine) – für ein Vorhaben aus Deutschland vermutlich **nicht** direkt förderfähig gewesen, aber als Modell/Blaupause relevant; auf Nachfolgeausschreibungen achten.
+- **InvestEU**: kein Direktzuschuss, sondern EU-Garantieinstrument, das über nationale Partner (in Deutschland u. a. die KfW) Bankfinanzierungen für Digitalisierung/Innovation zu günstigeren Konditionen absichert.
+
+### 6.5 Cross-cutting: Female Empowerment / Frauen in Technologie über alle Ebenen
+
+| Ebene | Programm |
+|---|---|
+| Kommunal | HIN Female StartAperitivo (Hamburg), Migrant Female Business/MiFeB (Hamburg) |
+| Land | Start-up BW Women (BW), Female Founders Program des Hamburger Senats (Hamburg), Koordinierungsstelle Frauen und Wirtschaft (Hessen) |
+| Bund | **EXIST-Women** – bundesweites Zusatzprogramm zum regulären EXIST-Gründerstipendium, an Hochschulen in allen drei Bundesländern nutzbar |
+| EU | **Women TechEU** (75.000 € je Start-up, laufend), EmpoWomen (2023–2025 abgeschlossen, Nachfolger beobachten) |
+
+**Einordnung:** Der Frauenanteil an Unternehmensgründungen in Deutschland sinkt aktuell auf **18,8 %**. Die Förderlandschaft reagiert mit einem wachsenden, aber noch fragmentierten Angebot (laut einer zitierten Untersuchung allein über 190 aktive Female-Empowerment-Initiativen in Berlin, davon 26 % mit Digital-/Tech-Fokus). Die Programme sind grundsätzlich **kombinierbar**, da sie unterschiedliche Instrumente auf unterschiedlichen Ebenen sind: z. B. Start-up BW Women (Qualifizierung/Mentoring, Land) + EXIST-Women (Stipendium, Bund) + Women TechEU (Zuschuss + Netzwerk, EU) lassen sich grundsätzlich parallel nutzen.
+
+### 6.6 Hinweis zu "technischem Support"
+
+Die geprüften Programme fördern durchweg **Entwicklung/Innovation** (F&E, Produktentwicklung, Digitalisierungsprojekte) – eine eigenständige Förderkategorie für den laufenden Betrieb von technischem Support/Kundenservice wurde in keinem der Programme gefunden. Support-nahe Kosten lassen sich in der Praxis meist nur **indirekt** mitfördern, z. B. als Teil der bezuschussten Beratungs-/Entwicklungsleistungen in den BW-Innovationsgutscheinen oder als Teilaspekt eines digitalen Prozessinnovationsprojekts bei Distr@l (Hessen).
+
+---
+
+## 7. Empfehlung für nächste Schritte
 
 1. Falls valide Downloadzahlen benötigt werden (z. B. für eine Investorenpräsentation), empfiehlt sich der kostenpflichtige Zugriff auf **Sensor Tower** oder **data.ai (App Annie)** – beide liefern geprüfte Store-Rankings/Downloadschätzungen, wurden hier aber nicht genutzt (kostenpflichtig, kein öffentlicher Zugriff).
 2. Eine Differenzierung über "Schnittstelle zu Modemagazinen" wäre am Markt aktuell ein Alleinstellungsmerkmal – kein untersuchter Wettbewerber bietet das.
 3. Eine offizielle Datenpartnerschaft mit einem Modehändler (nach Vorbild der nativen Zalando-Wardrobe-Integration) wäre technisch aufwendiger, aber ein stärkerer Trust-/Komfort-Vorteil als Screenshot-/Link-basiertes Hinzufügen.
 4. Für die Finanzierung: Bewerbung bei **Fashion for Good** (thematisch am besten passend) parallel zu **HTGF**/**EXIST** prüfen, sofern ein eigener Technologiekern (KI-Matching) Teil des Konzepts wird; **Zalando Build** und **H&M CO:LAB** als strategische Partner in Betracht ziehen, da eine Beteiligung dort potenziell auch den Zugang zu offiziellen Produktdaten (vgl. Kap. 2.2) erleichtern könnte.
+5. Regional/EU-Förderkombination je nach Standort prüfen (s. Kap. 6): z. B. in Hamburg zuerst **InnovationFocus KI und Robotik** (IFB Hamburg) für den KI-Kern, danach **Women TechEU** für die EU-Skalierung, wenn eine Frau in Top-Management-Position ist; in BW analog **Innovationsgutschein Hightech BW**/**Invest BW** plus **Start-up BW Women**; in Hessen **Distr@l** als Hauptinstrument. Eine verbindliche Förderfähigkeitsprüfung sollte in jedem Fall direkt bei der jeweiligen Förderbank (L-Bank/IFB Hamburg/WIBank Hessen) erfolgen, da sich Fristen und Kriterien laufend ändern.
 
 ## Quellen (Auswahl)
 
@@ -187,3 +257,14 @@ Es existiert **kein eigener EU-Fördertopf speziell für "Kleiderschrank-Apps"**
 - https://exist.de/en/programme/ (EXIST-Gründerstipendium, offizielle Seite)
 - https://en.wikipedia.org/wiki/High-Tech_Gr%C3%BCnderfonds (High-Tech Gründerfonds)
 - https://corporate.zalando.com/en/technology/zalando-launches-program-build-collaborate-startups (Zalando Build)
+- https://wm.baden-wuerttemberg.de/de/innovation/innovationsgutscheine (Innovationsgutscheine BW)
+- https://www.l-bank.de/allgemein/wirtschaftsfoerderung/artikelseiten/ki-innovationen.html (L-Bank KI-Förderschwerpunkt)
+- https://www.startupbw.de/ueber-the-start-up-laend/start-up-bw-women (Start-up BW Women)
+- https://www.ifbhh.de/foerderprogramm/innorampup (InnoRampUp Hamburg)
+- https://www.ifbhh.de/foerderprogramm/innovationfocus-ki-und-robotik (InnovationFocus KI und Robotik, Hamburg)
+- https://hamburg-business.com/de/news/female-founders-senat-will-gruenderinnen-hamburg-staerken (Female Founders Program Hamburg)
+- https://digitales.hessen.de/kuenstliche-intelligenz/ki-handlungsfelder/ki-innovation-und-ki-anwendungen-foerdern/distrl (Distr@l Hessen)
+- https://wirtschaft.hessen.de/wirtschaft/frauen-und-wirtschaft (Frauen und Wirtschaft Hessen)
+- https://digital-strategy.ec.europa.eu/en/activities/digital-programme (Digital Europe Programme)
+- https://eic.ec.europa.eu/news/women-techeu-continues-another-eu12-million-equity-free-grants-women-founders-deep-tech-2026-06-12_en (Women TechEU)
+- https://empowomen.eu/ (EmpoWomen)
