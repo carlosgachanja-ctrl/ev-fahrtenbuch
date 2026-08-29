@@ -216,6 +216,37 @@ Auf Wunsch vertieft: eine Förderleiter je Bundesland von der kommunalen/regiona
 
 Die geprüften Programme fördern durchweg **Entwicklung/Innovation** (F&E, Produktentwicklung, Digitalisierungsprojekte) – eine eigenständige Förderkategorie für den laufenden Betrieb von technischem Support/Kundenservice wurde in keinem der Programme gefunden. Support-nahe Kosten lassen sich in der Praxis meist nur **indirekt** mitfördern, z. B. als Teil der bezuschussten Beratungs-/Entwicklungsleistungen in den BW-Innovationsgutscheinen oder als Teilaspekt eines digitalen Prozessinnovationsprojekts bei Distr@l (Hessen).
 
+### 6.7 Konkrete Kombinierbarkeit der Programme
+
+Zusätzlich geprüft: Welche der oben genannten Programme lassen sich tatsächlich miteinander kombinieren? Das hängt an zwei beihilferechtlichen Grundprinzipien plus einigen programmspezifischen Einzelregeln.
+
+**Grundprinzip 1 – Kein Doppel für dieselben Kosten:** Zuschüsse (Zuwendungen) dürfen grundsätzlich nicht für **dieselben förderfähigen Kosten** kumuliert werden, wenn dadurch die zulässige Förderintensität überschritten würde (gilt so ausdrücklich für Distr@l/Hessen). Verschiedene Kostenpositionen oder Projektphasen desselben Vorhabens dürfen dagegen von verschiedenen Programmen gefördert werden – das ist der Standardweg, um mehrere Fördertöpfe legal zu stapeln.
+
+**Grundprinzip 2 – der De-minimis-Deckel gilt programm- und länderübergreifend:** Viele der kleineren Zuschüsse laufen rechtlich als **De-minimis-Beihilfe** nach EU-Verordnung 2023/2831 (in Kraft seit 1.1.2024, gültig bis 31.12.2030, Schwelle seit 2024 auf **300.000 € pro Unternehmen innerhalb von 3 Steuerjahren** angehoben, davor 200.000 €). Dazu zählen u. a. der BW-Innovationsgutschein, die Distr@l-Wachstumsförderlinie für Digitalstart-ups (bis 160.000 € als De-minimis) und InnoRampUp (Hamburg, mit eigener De-minimis-Erklärung nach 2023/2831). **Wichtig:** Dieser 300.000-€-Deckel gilt pro Unternehmen **gegenüber dem Mitgliedstaat Deutschland insgesamt** – Beihilfen aus BW, Hamburg und Hessen werden also **zusammengerechnet**, nicht pro Bundesland getrennt gezählt. Wer z. B. bereits 100.000 € Innovationsgutschein (BW) erhalten hat, kann in den folgenden zwei Jahren nur noch bis zu 200.000 € weitere De-minimis-Beihilfe (aus jedem Bundesland) in Anspruch nehmen.
+
+**Programmspezifische Einzelregeln, die konkret gefunden wurden:**
+
+| Kombination | Ergebnis | Quelle/Begründung |
+|---|---|---|
+| InnoRampUp ↔ InnoFounder/InnoImpact/InnoFinTech (alle IFB Hamburg) | **Nicht kombinierbar** | Laut Förderrichtlinie InnoRampUp ist innerhalb der IFB-Förderkette immer nur eine der vier Linien gleichzeitig nutzbar |
+| Innovationsgutschein Hightech Mobilität ↔ Innovationsgutschein A (beide BW) | **Kombinierbar** | Explizit im BW-Merkblatt genannt |
+| Mehrere Unternehmen im selben F&E-Projekt, je eigener Innovationsgutschein (BW) | **Kumulierbar** | Für gemeinsame größere F&E-Vorhaben ausdrücklich vorgesehen |
+| EXIST-Gründerstipendium ↔ andere Stipendien/Nebenjobs/Programme zur Lebensunterhaltsfinanzierung | **Nicht kombinierbar** (Ausnahme: Nebentätigkeit <5 Std./Woche) | EXIST darf den Lebensunterhalt nur einmal absichern |
+| EXIST-Gründerstipendium ↔ Innovationsgutschein (für externe Dienstleistungen) | **Kombinierbar**, wenn die extern beauftragte Leistung nicht bereits durch EXIST finanziert ist und sich klar von der EXIST-Förderung abgrenzen lässt | Existenzgründungsportal des Bundes |
+| EXIST-Gründerstipendium ↔ Forschungszulage (steuerliche FuE-Förderung) | **Kombinierbar** | Forschungszulage finanziert keinen Lebensunterhalt, daher kein Konflikt |
+| Parallele Bewerbung auf mehrere Programme, bevor ein Zuwendungsbescheid vorliegt | **Unkritisch** | Kollision entsteht erst mit dem tatsächlichen Bescheid, nicht mit der Antragstellung |
+| EIC Accelerator (EU) ↔ nationale/regionale Zuschüsse | **Kombinierbar**, solange keine identischen Kostenpositionen doppelt abgerechnet werden | Ausdrücklich auch mit der Forschungszulage kombinierbar genannt |
+| Beteiligungskapital (HTGF, Invest BW, Hessen-Kapital, EIC-Eigenkapitalanteil) ↔ Zuschüsse/Stipendien | **Grundsätzlich kombinierbar**, da anderes Förderinstrument (Investition statt Zuwendung für dieselben Kosten) | HTGF wird z. B. ausdrücklich als gut kombinierbar mit dem INVEST-Programm, weiteren VCs und Wachstumsdarlehen beschrieben; bei Co-Investments mit HTGF liegt die gemeinsame Erst-Beteiligungssumme meist bei bis zu 750.000 € |
+
+**Einordnung EU-Direktförderung vs. De-minimis (mit Vorbehalt):** EU-Zuschüsse, die direkt von der EU-Kommission bzw. ihren Exekutivagenturen vergeben werden (Horizon Europe, EIC Accelerator, Women TechEU, Digital Europe Programme), gelten nach gängiger beihilferechtlicher Praxis **nicht als "staatliche Beihilfe" eines Mitgliedstaats** im Sinne Art. 107/108 AEUV, da sie nicht aus Mitteln eines Mitgliedstaats, sondern direkt aus dem EU-Haushalt finanziert werden – sie zählen deshalb in der Regel **nicht** auf den nationalen 300.000-€-De-minimis-Deckel an. Diese Einschätzung folgt der Systematik der De-minimis-Verordnung, wurde in der Recherche aber nicht für jedes einzelne EU-Programm durch eine explizite Einzelfallquelle bestätigt – vor einer verbindlichen Finanzierungsplanung sollte das ein Fördermittelberater/die jeweils bewilligende Stelle gegenprüfen.
+
+**Praktischer Beispiel-Kombinationspfad** (rein illustrativ, im Detail immer bei der jeweiligen Förderbank zu verifizieren):
+1. **Frühphase:** EXIST-Gründerstipendium (Lebensunterhalt, Bund) + parallel Innovationsgutschein Start-up BW bzw. InnoRampUp/InnovationFocus KI und Robotik (Hamburg) für externe Entwicklungsleistungen, da unterschiedliche Kostenarten.
+2. **Qualifizierung/Netzwerk (kostenneutral, läuft parallel zu allem):** Start-up BW Women, Female Founders Program Hamburg, EXIST-Women – reine Beratungs-/Mentoring-Formate ohne Geldfluss, daher ohne De-minimis-Konflikt.
+3. **Wachstum:** Distr@l (Hessen) oder Invest BW als nächster Zuschuss – **aber**: Summe aller bisherigen De-minimis-Beihilfen (Schritt 1 + hier) gegen den 300.000-€-Deckel prüfen.
+4. **Skalierung/Kapital:** HTGF oder Hessen-Kapital (Beteiligungskapital) **zusätzlich** zu den bisherigen Zuschüssen – unproblematisch, da anderes Instrument.
+5. **EU-Ebene:** EIC Accelerator und/oder Women TechEU **zusätzlich**, da (nach obigem Vorbehalt) regelmäßig außerhalb der nationalen De-minimis-Rechnung.
+
 ---
 
 ## 7. Empfehlung für nächste Schritte
@@ -268,3 +299,8 @@ Die geprüften Programme fördern durchweg **Entwicklung/Innovation** (F&E, Prod
 - https://digital-strategy.ec.europa.eu/en/activities/digital-programme (Digital Europe Programme)
 - https://eic.ec.europa.eu/news/women-techeu-continues-another-eu12-million-equity-free-grants-women-founders-deep-tech-2026-06-12_en (Women TechEU)
 - https://empowomen.eu/ (EmpoWomen)
+- https://eur-lex.europa.eu/eli/reg/2023/2831/oj?locale=de (EU De-minimis-Verordnung 2023/2831)
+- https://www.ifbhh.de/resource/blob/6080/a22001bc922999109957e40bcc16beb9/foerderrichtlinie-innorampup-data.pdf (Förderrichtlinie InnoRampUp, Kumulierungsregel)
+- https://www.existenzgruendungsportal.de/Redaktion/DE/BMWK-Infopool/Antworten/Foerderung-Finanzierung/Foerderung/EXIST-Gruenderstipendium/EXIST-Gruenderstipendium-mit-weiteren-Foerderprogrammen-kombinieren (EXIST-Kombinierbarkeit)
+- https://digitales.hessen.de/foerderprogramme/distrl/das-wird-gefoerdert (Distr@l Kumulierungsregel/De-minimis)
+- https://www.l-bank.de/binaries/content/documents/lbank/allgemein/finanzhilfen/dokumente/innovationsgutschein/merkblatt-innovationsgutschein-stand-18.10.2023 (Merkblatt Innovationsgutschein BW, Kumulierung)
