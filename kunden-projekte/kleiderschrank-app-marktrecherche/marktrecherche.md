@@ -118,11 +118,43 @@ Ein erheblicher Teil der auffindbaren "Vergleichs-/Ranking"-Artikel (getwardrobe
 
 ---
 
-## 5. Empfehlung für nächste Schritte
+## 5. Europäische Fördermittel und Investoren für Kleiderschrank-/Fashion-Tech-Apps
+
+### 5.1 Direkte Investoren in bestehende Wardrobe-Apps
+
+| App | Runde | Investoren | Anmerkung |
+|---|---|---|---|
+| Whering (UK) | 7 Mio. USD Seed (2026) | eBay Ventures, Google AI Futures Fund (Lead) | Gesamtfinanzierung seit Gründung 2021 ca. 14 Mio. USD; Mittel sollen u. a. in KI-Personalisierung, virtuelles Anprobieren und Resale-Integration fließen |
+| Save Your Wardrobe (UK) | 3 Mio. USD / 2,5 Mio. £ Seed (2022) | Start Path (Mastercards Fintech-Accelerator), Grow London, La Maison des Startups, Banque Heritage, The Future Fund (staatlicher UK-Corona-Rettungsfonds), u. a. | Zusätzlich B2B-Partnerschaft mit Zalando; Mittel für Expansion in DE/FR |
+| Cladwell (USA, zum Vergleich) | insg. 3,5–3,8 Mio. USD | diverse Seed-Investoren | 2019 von den Mitgründern selbst zurückgekauft ("Acqui-Buyout") |
+| Indyx (USA, zum Vergleich) | Pre-Seed | Alante Capital (Fokus zirkuläre/nachhaltige Konsumgüter) | Beleg dafür, dass auch Nicht-EU-Kreislaufwirtschafts-Fonds gezielt in Wardrobe-/Resale-Apps investieren |
+| Outfittery/Modomoto (DE, Styling-Box statt Foto-Wardrobe) | Outfittery insg. ~161 Mio. USD; Modomoto ~6,4 Mio. USD | Holtzbrinck Ventures, Highland Capital Partners, b2venture, u. a. | Zeigt: Deutsche Fashion-Tech-VC-Runden dieser Größenordnung sind möglich, aber bislang nur für das Styling-Box-Modell, nicht für Foto-Kleiderschrank-Apps |
+
+### 5.2 Themenspezifische Programme mit Europa-Bezug (zirkuläre Mode)
+
+- **Fashion for Good** (Amsterdam): Innovationsplattform + 12-wöchiger Accelerator gemeinsam mit Plug and Play; bislang 184 unterstützte Innovator:innen, 50 Direktinvestitionen, 5 Mio. € Direktinvestition, >2,3 Mrd. € mobilisiertes Folgekapital. Kooperationspartner ist u. a. **Zalando**. Fokus: zirkuläre Bekleidung/Schuhe; eigenes "Scaling Programme" für Startups nach dem Proof-of-Concept – passt thematisch gut zu einer Wardrobe-App mit Nachhaltigkeits-/Wiederverkaufsfokus.
+- **Zalando Investments / Zalando Build**: Corporate-VC-Beteiligungen plus Accelerator-Programm gezielt für Startups an der Schnittstelle Handel/Fashion-Tech (Daten, KI, Nachhaltigkeit). Kein reiner Fördertopf, sondern strategische Beteiligung/Kooperation.
+- **H&M CO:LAB / H&M Group Ventures** (Stockholm, s. Kap. 2.2): >3 Mrd. SEK investiert, 35 Portfoliounternehmen, Fokus zirkuläre Mode/Materialien/Retail-Tech.
+- **EIT Innovation Agenda for Circular Textiles and Fashion**: gemeinsame Initiative von EIT Climate-KIC, EIT Culture & Creativity und EIT Manufacturing (erste Arbeitssitzung 2025 am ICS Aachen); EIT Culture & Creativity hat dafür einen 6-Mio.-€-Zuschuss für die Startphase erhalten. Ziel: neue Fördermechanismen speziell für zirkuläre Textil-/Mode-Innovation in Europa – noch im Aufbau, aber der derzeit einzige EU-Politikstrang, der explizit auf diese Branche zugeschnitten ist.
+
+### 5.3 Generische EU-/DE-Förderprogramme (branchenoffen, aber grundsätzlich anwendbar)
+
+- **EIC Accelerator** (Horizon Europe, EU-weit): Zuschuss 0,5–2,5 Mio. € und/oder Beteiligungskapital 0,5–10 Mio. € durch den EIC Fund. Voraussetzung: Technologie-Reifegrad (TRL) 5–6 und "bahnbrechende, hochriskante" Innovation – für eine reine Katalogisierungs-App ohne technologischen Kern eher schwer zu begründen, leichter bei einem echten KI-Styling-Alleinstellungsmerkmal.
+- **EXIST-Gründerstipendium** (Deutschland): bis 3.000 €/Monat für Gründer:innen aus Hochschule/Wissenschaft, branchenoffen, Voraussetzung ist ein innovativer, technologie- oder wissensbasierter Ansatz.
+- **High-Tech Gründerfonds (HTGF)** (Deutschland): Beteiligungskapital bis 1 Mio. € in der Seed-Phase; Fokus u. a. Digital Tech – Fashion-Apps sind grundsätzlich förderfähig, wenn ein klarer Technologiekern (z. B. eigene KI-Styling-Engine) vorliegt.
+
+### 5.4 Einordnung
+
+Es existiert **kein eigener EU-Fördertopf speziell für "Kleiderschrank-Apps"**. Die relevante Förderlandschaft läuft über zwei Schienen: (a) **branchenspezifisch über "zirkuläre Mode/Textilien"** (Fashion for Good, die neue EIT-Circular-Textiles-Fashion-Initiative, sowie strategische Corporate-Investoren wie Zalando und H&M, die aktiv nach Fashion-Tech-Startups suchen – teils auch als Weg zu einer echten Handelspartnerschaft, vgl. die H&M-API-Frage oben), oder (b) **generisch über Tech-/Gründerförderung** (EIC Accelerator, HTGF, EXIST), sofern ein glaubhafter Technologiekern (v. a. eigene KI-Styling-/Matching-Logik) vorhanden ist. Reine Foto-Katalogisierung ohne KI-Differenzierung dürfte für die anspruchsvolleren EU-/HTGF-Töpfe zu wenig "Innovation" darstellen; die Anbindung an das zirkuläre-Mode-Ökosystem (Fashion for Good, Zalando/H&M als Partner) erscheint der realistischere Zugang.
+
+---
+
+## 6. Empfehlung für nächste Schritte
 
 1. Falls valide Downloadzahlen benötigt werden (z. B. für eine Investorenpräsentation), empfiehlt sich der kostenpflichtige Zugriff auf **Sensor Tower** oder **data.ai (App Annie)** – beide liefern geprüfte Store-Rankings/Downloadschätzungen, wurden hier aber nicht genutzt (kostenpflichtig, kein öffentlicher Zugriff).
 2. Eine Differenzierung über "Schnittstelle zu Modemagazinen" wäre am Markt aktuell ein Alleinstellungsmerkmal – kein untersuchter Wettbewerber bietet das.
 3. Eine offizielle Datenpartnerschaft mit einem Modehändler (nach Vorbild der nativen Zalando-Wardrobe-Integration) wäre technisch aufwendiger, aber ein stärkerer Trust-/Komfort-Vorteil als Screenshot-/Link-basiertes Hinzufügen.
+4. Für die Finanzierung: Bewerbung bei **Fashion for Good** (thematisch am besten passend) parallel zu **HTGF**/**EXIST** prüfen, sofern ein eigener Technologiekern (KI-Matching) Teil des Konzepts wird; **Zalando Build** und **H&M CO:LAB** als strategische Partner in Betracht ziehen, da eine Beteiligung dort potenziell auch den Zugang zu offiziellen Produktdaten (vgl. Kap. 2.2) erleichtern könnte.
 
 ## Quellen (Auswahl)
 
@@ -147,3 +179,11 @@ Ein erheblicher Teil der auffindbaren "Vergleichs-/Ranking"-Artikel (getwardrobe
 - https://hmgroup.com/news/hm-group-continues-investment-in-startups-to-enable-a-more-circular-fashion-future/ (H&M CO:LAB/Group Ventures Portfolio)
 - https://www.retaildive.com/news/hm-invests-13m-in-ai-driven-menswear-startup-thread/539881 (H&M-Investment in Thread)
 - https://www.retailed.io/datasources/api/hm-product (Beispiel eines inoffiziellen H&M-Scrapers, nicht autorisiert)
+- https://uk.finance.yahoo.com/news/whering-wardrobe-styling-app-raises-040100176.html (Whering-Finanzierungsrunde)
+- https://www.finsmes.com/2022/07/save-your-wardrobe-raises-3m-in-seed-funding.html (Save Your Wardrobe Seed-Runde)
+- https://www.fashionforgood.com/investment-hub/our-investments/ (Fashion for Good Investment Hub)
+- https://www.climate-kic.org/press-releases/circular-textiles-and-fashion-initiative/ (EIT Circular Textiles and Fashion Initiative)
+- https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en (EIC Accelerator, offizielle EU-Seite)
+- https://exist.de/en/programme/ (EXIST-Gründerstipendium, offizielle Seite)
+- https://en.wikipedia.org/wiki/High-Tech_Gr%C3%BCnderfonds (High-Tech Gründerfonds)
+- https://corporate.zalando.com/en/technology/zalando-launches-program-build-collaborate-startups (Zalando Build)
